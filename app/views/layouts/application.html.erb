@@ -2,11 +2,19 @@
 <html>
 <head>
   <title>ArtFeedSF</title>
+  <meta name="description" content="The latest art & art-related news, tweets, and events in the San Francisco Bay Area"> 
+  <meta name="keywords" content="Art,SF,Galleries,Art News,Art Tweets,Art Events,San Francisco">
+  <meta name="author" content="Alex Ehrnschwender">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <%= yield %>
+
+  <%= render "partials/footer" %>
+
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -18,9 +26,6 @@
 
   </script>
 
-  <%= yield %>
-
-  <%= render "partials/footer" %>
 
 </body>
 </html>
