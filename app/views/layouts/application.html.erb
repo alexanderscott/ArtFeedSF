@@ -2,9 +2,7 @@
 <html>
 <head>
   <title>ArtFeedSF</title>
-  <meta name="description" content="The latest art & art-related news, tweets, and events in the San Francisco Bay Area"> 
-  <meta name="keywords" content="Art,SF,Galleries,Art News,Art Tweets,Art Events,San Francisco">
-  <meta name="author" content="Alex Ehrnschwender">
+  <%= metamagic :title => "ArtFeedSF", :description => "Live feed of art-related tweets, articles, and events in the San Francisco Bay Area", :keywords => "art, SF, Bay Area, tweets, news, events, exhibits, galleries" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
