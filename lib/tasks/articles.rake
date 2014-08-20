@@ -19,14 +19,14 @@ namespace :articles do
         :blog_name => 'SFist',
         :blog_url => 'http://sfist.com/',
         :feed_url => 'http://feeds.gothamistllc.com/SFist',
-        :blog_image => 'http://assets.gothamistllc.com/images/spacer.gif',
+        :blog_image => 'http://assets.gothamistllc.com/logos/2012/SFist.png',
         :must_filter => true
       },
       {
         :blog_name => 'SF Weekly',
         :blog_url => 'http://www.sfweekly.com/',
         :feed_url => 'http://www.sfweekly.com/syndication/issue/',
-        :blog_image => 'http://assets.sfweekly.com/img/citylogo-lg.png',
+        :blog_image => 'http://rootdivision.org/images/SF-Weekly-Logo.png',
         :must_filter => true
       },
       {
@@ -82,7 +82,7 @@ namespace :articles do
         :blog_name => 'San Francisco Art Institute',
         :blog_url => 'http://www.sfai.edu/',
         :feed_url => 'http://www.sfai.edu/rss.xml',
-        :blog_image => 'http://moodle.sfai.edu/express/design/2/1390793528/pix/logo.png',
+        :blog_image => 'http://creativetime.org/programs/archive/2011/teach4amerika/site/wp-content/uploads/2011/03/SFAI-150x150.jpg',
         :must_filter => false
       },
       {
@@ -121,6 +121,7 @@ namespace :articles do
 
     feeds.each do |feed|
       feed_obj = Feedzirra::Feed.fetch_and_parse(feed[:feed_url])
+      next if feed_obj.is_a?(Fixnum)
       feed_obj.entries.each do |entry|
         entry.sanitize!
 
